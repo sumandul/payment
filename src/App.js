@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import PaymentForm from "./components/PaymentForm";
+import Success from "./components/Success";
+import Suscription from "./components/suscription";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<PaymentForm />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/suscribtion" element={<Suscription />} />
+        {/* <Route path="/sub/:id" element={<Suscription />} /> */}
+      </Routes>
+    </>
   );
 }
 
